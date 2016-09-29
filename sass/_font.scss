@@ -1,0 +1,38 @@
+// @font-face {
+//   font-family: "CSong3HK-Medium";
+//   src: local("CSong3HK-Medium"),
+//        url('../font/CSong3HK-Medium.otf');
+// }
+@font-face {
+  font-family: "DFYuanStd-W5";
+  font-display: swap;
+  src: local("DFYuanStd-W5"),
+       url('../font/DFYuanStd-W5.ttf');
+}
+//中文內文
+// @font-face {
+//   font-family: "GenJyuuGothic-P-light";
+//   src: local("GenJyuuGothic-P-light"),
+//        url('../font/GenJyuuGothic-P-light.ttf');
+// }
+//中文標題
+@font-face {
+  font-family: "GenJyuuGothic-P-Bold";
+  font-display: swap;
+  src: local("GenJyuuGothic-P-Bold"),
+       url('../font/GenJyuuGothic-P-Bold.ttf');
+}
+// 英文大字
+@font-face {
+  font-family: "DIN-Next-Rounded-LT-W01-Regular";
+  font-display: swap;
+  src: local("DIN-Next-Rounded-LT-W01-Regular"),
+       url('../font/DIN-Next-Rounded-LT-W01-Regular.ttf');
+}
+// 英文小字
+@font-face {
+  font-family: "DIN-Next-Rounded-LT-W01-Light";
+  font-display: swap;
+  src: local("DIN-Next-Rounded-LT-W01-Light"),
+       url('../font/DIN-Next-Rounded-LT-W01-Light.ttf');
+}

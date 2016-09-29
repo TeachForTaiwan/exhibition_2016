@@ -1,0 +1,84 @@
+@media only screen and (max-width: 767px) {
+    #summary {
+        figure {
+            figcaption {
+                font-size: 1.6rem;
+                padding: 0;
+                span {
+                    display: block;
+                }
+            }
+            .gap {
+                border: none;
+            }
+            .date {
+                position: relative;
+                right: 0;
+                float: none;
+            }
+            .content {
+                height: auto;
+                p {
+                    padding: 1rem 15px;
+                }
+            }
+        }
+    }
+    #exhibition {
+        p {
+            font-size: 1.3rem;
+            padding: 0 0.6rem 0.6rem;
+        }
+    }
+    #classroom {
+        @media only screen and (max-width: 479px) {
+            .classroom-header {
+                margin-bottom: 120px;
+            }
+        }
+        p {
+            padding: 15px;
+        }
+        .swiper-slide.bg-blue-dark .intro {
+            top: 0;
+            left: 15px;
+            position: fixed;
+            font-size: 1.6rem;
+            &:after {
+                left: 1rem;
+                top: 4rem;
+            }
+        }
+        .swiper-slide.bg-blue-dark {
+            .classroom-description {
+                figure figcaption span {
+                    display: block;
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+    #teacher {
+        .teacher-header {
+            @media only screen and (max-width: 479px) {
+                margin-bottom: 80px;
+            }
+        }
+    }
+    #future {
+        .container {
+            height: 500px;
+        }
+        .content {
+            left: 0;
+            top: auto;
+            bottom: 30%;
+            p {
+                font-size: 5vw;
+            }
+        }
+        .future-img.future-img-toys {
+            top: 50px;
+        }
+    }
+}

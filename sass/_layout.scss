@@ -1,0 +1,454 @@
+//summary
+#summary {
+    .container {
+        // display: flex;
+    }
+    figure {
+        margin-bottom: 2.4rem;
+        text-align: right;
+        .gap {
+            border-bottom: 1px solid $color-gray;
+        }
+        figcaption {
+            text-align: left;
+            padding: 1.5em 0;
+            span {
+                font-size: 0.8rem;
+                font-weight: normal;
+            }
+        }
+        .content {
+            // padding-bottom: 80px;
+            height: 320px;
+            p {
+                padding: 0 0 0 1.5em;
+                margin: 0;
+                text-align: justify;
+                line-height: 1.8;
+            }
+            img {
+                // height: 100%;
+            }
+        }
+        .date {
+            // color: $color-gray3;
+            position: absolute;
+            right: 1rem;
+            bottom: 0;
+            text-align: right;
+            padding-right: 0;
+        }
+    }
+}
+
+#exhibition {
+    background: url('../img/kv_bg_1920.png') center/cover;
+    background-size: 150%;
+    background-attachment: fixed;
+    div {
+        padding: 2rem 0 3rem;
+    }
+    p {
+        font-size: 1.6rem;
+        color: #fff;
+        padding-left: 2.4rem;
+        padding-bottom: 0.6rem;
+    }
+}
+
+#classroom {
+    .swiper-container-classroom-selector {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        background: $color-gray4;
+        bottom: -115px;
+        transition: 0.5s;
+        transition-delay: 0.5s;
+        &.is-active {
+            bottom: 0;
+        }
+        @media only screen and (min-width: 992px) {
+            .swiper-wrapper {
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+                padding-left: 12px;
+            }
+        }
+        .swiper-slide {
+            background: $color-gray4;
+            text-align: center;
+            font-size: 18px;
+            // background: #fff;
+            width: 115px;
+            height: 115px;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            img {
+                width: 100px;
+                height: 99px;
+                margin: 0.5rem;
+                overflow: hidden;
+                @include filter(grayscale(60%));
+                &:hover {
+                    @include filter(grayscale(0));
+                }
+            }
+        }
+    }
+    .lightbox-wrap {
+        padding: 0;
+        .exit {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            right: 30px;
+            top: 0;
+            left: auto;
+            color: #fff;
+            z-index: 3;
+            font-size: 2rem;
+            &.is-active {
+                z-index: 999;
+            }
+        }
+    }
+    .img-wrap {
+        @media only screen and (min-width: 992px) {
+            margin-left: 0;
+        }
+        img {
+            width: 100%;
+        }
+    }
+    .classroom-header {
+        margin-bottom: 50px;
+        position: relative;
+    }
+    p {
+        @media only screen and (min-width: 992px) {
+            margin-left: 0;
+        }
+        padding: 1.6em 50px 0 80px;
+    }
+    .classroom-img-1 {
+        height: 445px;
+    }
+    .swiper-slide {
+        overflow-y: auto !important;
+        height: 100vh;
+        .profile {
+            text-align: center;
+        }
+        &.bg-blue-dark {
+            background: $color-blue;
+            color: #fff;
+            @media only screen and (min-width: 992px) {
+                .classroom-intros {
+                    padding-top: 5rem;
+                    padding-left: 7rem;
+                }
+            }
+            .intro {
+                // position: absolute;
+                position: fixed;
+                left: 4rem;
+                top: 0.5rem;
+                @media only screen and (min-width: 992px) and (max-width: 1279px) {
+                    left: 1rem;
+                    top: 1rem;
+                }
+                &:after {
+                    content: "";
+                    position: absolute;
+                    height: 2px;
+                    left: 2em;
+                    top: 2em;
+                    width: 165px;
+                    background: #fff;
+                    @include transform(rotate(-60deg));
+                }
+                @media only screen and (max-width: 479px) {
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+            figure {
+                // padding: 25px 0;
+                img {
+                    width: 150px;
+                }
+            }
+            figcaption {
+                font-weight: normal;
+                text-align: center;
+                .name,
+                .desc {
+                    margin: 1em 0;
+                }
+            }
+            .classroom-description {
+                z-index: -1;
+                position: fixed;
+                // top: 0;
+                bottom:115px;
+                left: 0;
+                width: 100%;
+                height: calc(100vh - 115px);
+                max-height: 800px;
+                background: #fff;
+                transition: 0.5s;
+                opacity: 0;
+                &.is-active {
+                    z-index: 1;
+                    opacity: 1;
+                }
+                figure {
+                    display: none;
+                    opacity: 0;
+                    color: $color-gray2;
+                    position: absolute;
+                    top: 15%;
+                    transition: 0.2s;
+                    overflow: auto;
+                    height: 100%;
+                    &.is-active {
+                        display: block;
+                        opacity: 1;
+                    }
+                    figcaption {
+                        text-align: left;
+                        font-size: 1.8rem;
+                        color: $color-yellow;
+                        span {
+                            font-size: 1.2rem;
+                            padding-left: 1rem;
+                        }
+                    }
+                    blockquote {
+                        padding: 1rem 0;
+                        font-size: 1rem;
+                        border: none;
+                    }
+                    p {
+                        padding: 0;
+                    }
+                    .inner-set {
+                        border-left: 1px solid;
+                        .date {
+                            color: $color-yellow;
+                            // text-align: center;
+                            font-size: 1.2rem;
+                            padding: 1rem 0;
+                        }
+                        .who {
+                            padding: 0;
+                            li {
+                                list-style: none;
+                                padding: 1rem 0;
+                                &:first-of-type {
+                                    padding: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#teacher {
+    margin: 0;
+    color: #fff;
+    .teacher-header {
+        margin-bottom: 50px;
+        position: relative;
+    }
+    .teacher-presentation {
+        padding: 100px 0;
+        height: auto;
+        background: $color-blue;
+        .title {
+            font-family: "DIN-Next-Rounded-LT-W01-Light", "DFYuanStd-W5", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", "Microsoft JhengHei", sans-serif;
+            font-size: 1.4rem;
+        }
+    }
+    .swiper-container {
+        width: 100%;
+        margin: 0;
+    }
+    .swiper-container-teacher {
+        width: 100%;
+        margin: 0;
+    }
+    .teacher-content {
+        max-height: calc(100vh - 50px);
+        // padding: 50px 0;
+        padding: 0;
+        height: auto;
+    }
+    .swiper-slide {
+        overflow-y: auto !important;
+        height: calc(100vh - 100px);
+        max-height: calc(100vh - 100px);
+        min-height: calc(100vh - 100px);
+        &.bg-yellow {
+            background: $color-yellow;
+        }
+        &.bg-blue {
+            background: $color-blue;
+        }
+        .container {
+            padding-top: 2.4rem;
+            padding-bottom: 2.4rem;
+            .title {
+                font-size: 1.4rem;
+            }
+        }
+        .img-wrap {
+            text-align: center;
+            img {
+                padding-bottom: 1em;
+                &:last-of-type {
+                    padding-bottom: 0;
+                }
+            }
+        }
+        .about {
+            padding: 0;
+            margin: 1em 0 0;
+            li {
+                list-style: none;
+                display: inline-block;
+                padding: 0 0.5em;
+                position: relative;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    width: 1px;
+                    height: 1em;
+                    right: 0;
+                    top: 50%;
+                    background: #fff;
+                    @include transform(translateY(-50%));
+                }
+                &:first-of-type {
+                    padding-left: 0;
+                }
+                &:last-of-type:after {
+                    display: none;
+                }
+            }
+            +p {
+                margin: 4em 0 0;
+                font-size: 1.2rem;
+            }
+        }
+    }
+    .content-inner {
+        padding-top: 150px;
+        a {
+            display: inline;
+        }
+    }
+}
+
+#solution {
+    .bg-img {
+        padding: 100px 0;
+    }
+}
+
+#future {
+    margin: 0;
+    background: url('../img/section_future.jpg') center/cover;
+    background-attachment: fixed;
+    position: relative;
+    .container {
+        height: 750px;
+    }
+    .future-img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        &.future-img-toys {
+            right: 0;
+            width: 50%;
+            max-width: 500px;
+            top: 150px;
+            left: auto;
+            transform: translate(0, -50%);
+        }
+    }
+    .content {
+        position: absolute;
+        top: 30%;
+        left: 4.6rem;
+        color: #fff;
+        p {
+            font-family: "DIN-Next-Rounded-LT-W01-Regular", "GenJyuuGothic-P-Bold", sans-serif;
+            ;
+            font-size: 2.1rem;
+            padding-bottom: 0.6rem;
+            margin: 0;
+        }
+    }
+}
+
+#about {
+    .media-title {
+        p {
+            text-align: center;
+        }
+    }
+    .media-content {
+        a {
+            &:hover {
+                color: $color-gray3;
+                figure {
+                    transition: 0.2s;
+                    background: lighten(#ED9191, 20);
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+    .media-inner {
+        padding: 50px 15px;
+    }
+}
+
+footer {
+    background: $color-gray5;
+    color: $color-gray7;
+    ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 1.2rem 0;
+        li {}
+        &.social-links {
+            li {
+                padding: 0 20px;
+            }
+        }
+    }
+}
